@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - POSTGRES_USER=pp
+      - POSTGRES_PASSWORD=pp
+      - POSTGRES_DB=pencil
+    ports:
+      - ${DOCKER_DATABASE_PORT:-3322}:5432
+    volumes:
+      - ./storage/pgdata:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - ${DOCKER_ADMINER_PORT:-7788}:8080
+    environment:
+      - ADMINER_DEFAULT_SERVER=db
+    depends_on:
+      - db
