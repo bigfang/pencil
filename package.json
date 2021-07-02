@@ -4,10 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "pnpm && pnpm setup:env auto && pnpm setup:db",
+    "setup": "pnpm install && pnpm setup:env auto && pnpm setup:db",
     "setup:env": "node ./scripts/setup_env.js",
     "setup:db": "node ./scripts/setup_db.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./scripts/start.js",
+    "test": "node scripts/test.js",
+    "clean": "node ./scripts/clean.js",
+    "reset": "pnpm clean && node ./scripts/delete-env-file.js",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.graphql",
+    "prettier:all": "prettier --ignore-path .eslintignore \"**/*.{js,jsx,ts,tsx,graphql,md}\"",
+    "db": "pnpm --filter @app/db",
+    "server": "pnpm --filter @app/server"
   },
   "author": "bigfang",
   "license": "MIT",

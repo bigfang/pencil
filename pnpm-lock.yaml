@@ -36,8 +36,10 @@ importers:
 
   '@app/db':
     specifiers:
+      '@app/config': workspace:^0.1.0
       graphile-migrate: ^1.2.0
     dependencies:
+      '@app/config': link:../config
       graphile-migrate: 1.2.0
 
   '@app/server':

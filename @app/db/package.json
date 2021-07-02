@@ -14,6 +14,7 @@
   "author": "bigfang",
   "license": "MIT",
   "dependencies": {
+    "@app/config": "workspace:^0.1.0",
     "graphile-migrate": "^1.2.0"
   }
 }
