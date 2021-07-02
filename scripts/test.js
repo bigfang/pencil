@@ -9,7 +9,6 @@ function spawnSync(cmd, args, options) {
     stdio: ["pipe", "inherit", "inherit"],
     env: {
       ...process.env,
-      YARN_SILENT: "1",
       npm_config_loglevel: "silent",
     },
     shell: true,
@@ -77,8 +76,8 @@ function main() {
   };
 
   // Reset the test database
-  execSync("yarn db gm reset --shadow --erase", opts);
-  execSync("yarn db watch --once --shadow", opts);
+  execSync("pnpm db gm reset --shadow --erase", opts);
+  execSync("pnpm db watch --once --shadow", opts);
 
   if (watchMode) {
     // We're in watch mode, so keep watching the `current.yml` file
@@ -91,7 +90,7 @@ function main() {
         },
         {
           name: "testdb",
-          command: "yarn db watch --shadow",
+          command: "pnpm db watch --shadow",
           prefixColor: "blue",
         },
       ],
