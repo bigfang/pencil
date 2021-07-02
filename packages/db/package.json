@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gm": "NODE_OPTIONS=\"$NODE_OPTIONS -r @app/config/env\" graphile-migrate",
+    "migrate": "pnpm gm migrate",
+    "watch": "pnpm gm watch",
+    "commit": "pnpm gm commit",
+    "uncommit": "pnpm gm uncommit",
+    "reset": "pnpm gm reset"
   },
   "author": "bigfang",
   "license": "MIT",
