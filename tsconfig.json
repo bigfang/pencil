@@ -34,13 +34,13 @@
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["packages/*"]
+      "@app/*": ["@app/*"]
     }
   },
   "include": [],
   "exclude": [],
   "references": [
-    { "path": "packages/config" },
-    { "path": "packages/server" }
+    { "path": "@app/config" },
+    { "path": "@app/server" }
   ]
 }
