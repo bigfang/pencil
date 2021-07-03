@@ -17,7 +17,7 @@ runMain(async () => {
   await checkGit();
 
   // Ensure server build has been run
-  runSync(npmCmd, ["server", "build"]);
+  runSync(npmCmd, ["run", "server", "build"]);
 
   // Source our environment
   dotenv.config({ path: `${__dirname}/../.env` });

@@ -62,7 +62,7 @@ runMain(async () => {
   );
 
   // And perform setup
-  runSync(npmCmd, ["server", "build"]);
+  runSync(npmCmd, ["run", "server", "build"]);
 
   if (process.argv[2] === "auto") {
     // We're advancing automatically
