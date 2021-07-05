@@ -125,8 +125,8 @@ runMain(async () => {
   }
   await pgPool.end();
 
-  runSync(npmCmd, ["db", "reset", "--erase"]);
-  runSync(npmCmd, ["db", "reset", "--shadow", "--erase"]);
+  runSync(npmCmd, ["db", "reset", "--", "--", "--", "--erase"]);
+  runSync(npmCmd, ["db", "reset", "--", "--", "--", "--shadow", "--erase"]);
 
   outro(`\
 ✅ Setup success

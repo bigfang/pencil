@@ -38,11 +38,11 @@ async function main() {
     );
     console.log();
     console.log(
-      `  Site:     ${chalk.bold.underline(`http://localhost:${actualPort}`)}`
+      `  Site:     ${chalk.bold.underline(`http://localhost:${actualPort}/graphql`)}`
     );
     console.log(
       `  GraphiQL: ${chalk.bold.underline(
-        `http://localhost:${actualPort}/graphiql`
+        `http://localhost:${actualPort}`
       )}`
     );
     console.log();

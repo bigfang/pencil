@@ -96,6 +96,9 @@ export function getPostGraphileOptions({
     // Allow EXPLAIN in development (you can replace this with a callback function if you want more control)
     allowExplain: isDev,
 
+    graphqlRoute: '/graphql',
+    graphiqlRoute: '/',
+
     // Disable query logging - we're using morgan
     disableQueryLog: true,
 
