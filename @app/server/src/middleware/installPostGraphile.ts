@@ -174,7 +174,7 @@ export default function installPostGraphile(app: Express) {
   const authPgPool = getAuthPgPool(app);
   const rootPgPool = getRootPgPool(app);
   const middleware = postgraphile<Request, Response>(
-    authPgPool,
+    rootPgPool,
     "app_public",
     getPostGraphileOptions({
       websocketMiddlewares,
