@@ -100,7 +100,7 @@ export function getPostGraphileOptions({
     graphiqlRoute: '/',
 
     // Disable query logging - we're using morgan
-    disableQueryLog: true,
+    disableQueryLog: !isDev,
 
     // Custom error handling
     handleErrors,
