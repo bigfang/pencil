@@ -349,6 +349,7 @@ type Person implements Node {
   A globally unique identifier. Can be used in various places throughout the system to identify this single value.
   """
   nodeId: ID!
+  updatedAt: Datetime
 }
 
 """
@@ -375,6 +376,7 @@ input PersonInput {
 
   """The person’s last name."""
   lastName: String
+  updatedAt: Datetime
 }
 
 """
@@ -395,6 +397,7 @@ input PersonPatch {
 
   """The person’s last name."""
   lastName: String
+  updatedAt: Datetime
 }
 
 """A forum post written by a user."""
@@ -424,6 +427,7 @@ type Post implements Node {
 
   """The topic this has been posted in."""
   topic: PostTopic
+  updatedAt: Datetime
 }
 
 """
@@ -453,6 +457,7 @@ input PostInput {
 
   """The topic this has been posted in."""
   topic: PostTopic
+  updatedAt: Datetime
 }
 
 """Represents an update to a `Post`. Fields that are set will be updated."""
@@ -474,6 +479,7 @@ input PostPatch {
 
   """The topic this has been posted in."""
   topic: PostTopic
+  updatedAt: Datetime
 }
 
 enum PostTopic {
