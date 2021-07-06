@@ -331,11 +331,19 @@ type Person implements Node {
   """The person’s first name."""
   firstName: String!
 
+  """
+  A person’s full name which is a concatenation of their first and last name.
+  """
+  fullName: String
+
   """The primary unique identifier for the person."""
   id: Int!
 
   """The person’s last name."""
   lastName: String
+
+  """Get’s the latest post written by the person."""
+  latestPost: Post
 
   """
   A globally unique identifier. Can be used in various places throughout the system to identify this single value.
@@ -410,6 +418,9 @@ type Post implements Node {
   A globally unique identifier. Can be used in various places throughout the system to identify this single value.
   """
   nodeId: ID!
+
+  """A truncated version of the body for summaries."""
+  summary(length: Int, omission: String): String
 
   """The topic this has been posted in."""
   topic: PostTopic
@@ -597,6 +608,28 @@ type Query implements Node {
   which can only query top level fields if they are in a particular form.
   """
   query: Query!
+
+  """Returns posts containing a given search term."""
+  searchPosts(
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+    search: String!
+  ): PostsConnection
 }
 
 """All input for the `updatePersonByNodeId` mutation."""
