@@ -11,6 +11,8 @@
     "test": "node scripts/test.js",
     "clean": "node ./scripts/clean.js",
     "reset": "pnpm clean && node ./scripts/delete-env-file.js",
+    "lint": "tsc -b && pnpm prettier:all --check && pnpm eslint .",
+    "lint:fix": "pnpm eslint --fix . && pnpm prettier:all --write",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.graphql",
     "prettier:all": "prettier --ignore-path .eslintignore \"**/*.{js,jsx,ts,tsx,graphql,md}\"",
     "db": "pnpm --filter @app/db",

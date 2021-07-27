@@ -9,7 +9,8 @@
     "watch": "pnpm gm watch",
     "commit": "pnpm gm commit",
     "uncommit": "pnpm gm uncommit",
-    "reset": "pnpm gm reset"
+    "reset": "pnpm gm reset",
+    "dump": "pnpm gm migrate && pnpm gm reset --shadow --erase && pnpm gm migrate --shadow --forceActions"
   },
   "author": "bigfang",
   "license": "MIT",
